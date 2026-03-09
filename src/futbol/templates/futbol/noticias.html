@@ -1,0 +1,14 @@
+{% extends 'futbol/base.html' %}
+
+{% block title %}Noticias{% endblock %}
+
+{% block content %}
+<h2>Noticias</h2>
+{% for noticia in noticias %}
+    <p><strong>{{ noticia.titulo }}</strong> - {{ noticia.fecha }}</p>
+    <p>{{ noticia.contenido }}</p>
+    <hr>
+{% empty %}
+    <p>No hay noticias publicadas.</p>
+{% endfor %}
+{% endblock %}

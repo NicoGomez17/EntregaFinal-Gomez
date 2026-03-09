@@ -1,0 +1,12 @@
+{% extends 'futbol/base.html' %}
+
+{% block title %}Jugadores{% endblock %}
+
+{% block content %}
+<h2>Lista de Jugadores</h2>
+{% for jugador in jugadores %}
+    <p>{{ jugador.nombre }} - {{ jugador.posicion }} - {{ jugador.equipo.nombre }}</p>
+{% empty %}
+    <p>No hay jugadores registrados.</p>
+{% endfor %}
+{% endblock %}

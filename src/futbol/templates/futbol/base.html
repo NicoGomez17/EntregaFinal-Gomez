@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mi Web de Fútbol{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Web de Fútbol</h1>
+        <nav>
+            <a href="{% url 'inicio' %}">Inicio</a> |
+            <a href="{% url 'equipos' %}">Equipos</a> |
+            <a href="{% url 'jugadores' %}">Jugadores</a> |
+            <a href="{% url 'noticias' %}">Noticias</a> |
+            <a href="{% url 'about' %}">About</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <hr>
+        <p>Mi Web de Fútbol - Proyecto</p>
+    </footer>
+</body>
+</html>
