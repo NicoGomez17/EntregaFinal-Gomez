@@ -3,16 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Mi Web de Fútbol{% endblock %}</title>
+    <style>
+
+       body{
+            font-family: Arial;
+            margin:0;
+            background:#f4f4f4;
+
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+        }
+
+        nav{
+            background:#222;
+            padding:15px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-right:15px;
+            font-weight:bold;
+        }
+
+        nav a:hover{
+            color:#00ff9d;
+        }
+
+        main{
+            flex:1;
+        }
+
+        footer{
+            background:#222;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+
+        .container{
+            width:80%;
+            margin:auto;
+            margin-top:30px;
+        }
+
+        .btn{
+            background:#007bff;
+            color:white;
+            padding:8px 15px;
+            border:none;
+            border-radius:5px;
+            text-decoration:none;
+        }
+
+        .btn:hover{
+            background:#0056b3;
+        }
+
+        input{
+            padding:6px;
+            margin-right:5px;
+        }
+
+        .nav-right a{
+            margin-left:15px;
+        }
+
+    </style>
+
 </head>
 <body>
     <header>
         <h1>Mi Web de Fútbol</h1>
         <nav>
-            <a href="{% url 'inicio' %}">Inicio</a> |
-            <a href="{% url 'equipos' %}">Equipos</a> |
-            <a href="{% url 'jugadores' %}">Jugadores</a> |
-            <a href="{% url 'noticias' %}">Noticias</a> |
-            <a href="{% url 'about' %}">About</a>
+            <div>
+                <a href="{% url 'inicio' %}">Inicio</a>
+                <a href="{% url 'equipos' %}">Equipos</a>
+                <a href="{% url 'jugadores' %}">Jugadores</a>
+                <a href="{% url 'noticias' %}">Noticias</a>
+                <a href="{% url 'about' %}">About</a>
+            </div>
+            
+            
+            <div class="nav-right">
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+                <a href="{% url 'logout' %}">Logout</a>
+            </div>
         </nav>
         <hr>
     </header>
