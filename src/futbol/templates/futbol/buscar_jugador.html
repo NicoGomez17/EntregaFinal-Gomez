@@ -1,0 +1,25 @@
+{% extends 'futbol/base.html' %}
+
+{% block content %}
+<h2>Buscar Jugador</h2>
+
+<form method="GET">
+    <input type="text" name="nombre" placeholder="Nombre del jugador" value="{{ nombre }}">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if nombre %}
+    <h3>Resultados para: {{ nombre }}</h3>
+
+    {% if resultado %}
+        <ul>
+            {% for jugador in resultado %}
+                <li>{{ jugador.nombre }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron jugadores.</p>
+    {% endif %}
+{% endif %}
+
+{% endblock %}

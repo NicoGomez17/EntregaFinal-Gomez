@@ -1,0 +1,18 @@
+{% extends 'futbol/base.html' %}
+
+{% block title %}Crear Noticia{% endblock %}
+
+{% block content %}
+
+<h2>Crear Noticia</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Guardar</button>
+</form>
+
+<a href="{% url 'noticias' %}">Volver</a>
+
+{% endblock %}

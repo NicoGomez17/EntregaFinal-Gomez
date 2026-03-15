@@ -1,0 +1,14 @@
+{% extends 'futbol/base.html' %}
+
+{% block content %}
+<h2>Eliminar Equipo</h2>
+
+<p>¿Seguro que querés eliminar a {{ equipo }}?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+</form>
+
+<a href="{% url 'equipos' %}">Cancelar</a>
+{% endblock %}

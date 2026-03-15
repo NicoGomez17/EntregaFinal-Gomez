@@ -23,15 +23,24 @@ urlpatterns = [
 
     path('', views.inicio, name='inicio'),
     
-    
     path('equipos/', views.listar_equipos, name='equipos'),
+    path('equipos/crear/', views.crear_equipo, name='crear_equipo'),
+    path('equipos/editar/<int:id>/', views.editar_equipo, name='editar_equipo'),
+    path('equipos/eliminar/<int:id>/', views.eliminar_equipo, name='eliminar_equipo'),
 
     
     path('jugadores/', views.listar_jugadores, name='jugadores'),
+    path('jugadores/crear/', views.crear_jugador, name='crear_jugador'),
+    path('jugadores/editar/<int:id>/', views.editar_jugador, name='editar_jugador'),
+    path('jugadores/eliminar/<int:id>/', views.eliminar_jugador, name='eliminar_jugador'),
+    path('buscar-jugador/', views.buscar_jugador, name='buscar_jugador'),
 
     
     path('noticias/', views.listar_noticias, name='noticias'),
-
+    path('noticias/crear/', views.crear_noticia, name='crear_noticia'),
+    path('noticias/editar/<int:id>/', views.editar_noticia, name='editar_noticia'),
+    path('noticias/eliminar/<int:id>/', views.eliminar_noticia, name='eliminar_noticia'),
+    
     
     path('about/', views.about, name='about'),
 

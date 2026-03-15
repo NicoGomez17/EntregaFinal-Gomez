@@ -4,9 +4,18 @@
 
 {% block content %}
 <h2>Lista de Jugadores</h2>
+
+<a href="{% url 'crear_jugador' %}">Crear jugador</a>
+
 {% for jugador in jugadores %}
-    <p>{{ jugador.nombre }} - {{ jugador.posicion }} - {{ jugador.equipo.nombre }}</p>
+    <p>
+        {{ jugador.nombre }} - {{ jugador.posicion }} - {{ jugador.equipo.nombre }}
+
+        <a href="{% url 'editar_jugador' jugador.id %}">Editar</a>
+        <a href="{% url 'eliminar_jugador' jugador.id %}">Eliminar</a>
+    </p>
 {% empty %}
     <p>No hay jugadores registrados.</p>
 {% endfor %}
+
 {% endblock %}

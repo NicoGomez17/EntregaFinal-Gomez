@@ -4,9 +4,18 @@
 
 {% block content %}
 <h2>Lista de Equipos</h2>
+
+<a href="{% url 'crear_equipo' %}">Crear equipo</a>
+
 {% for equipo in equipos %}
-    <p>{{ equipo.nombre }} - {{ equipo.pais }}</p>
+    <p>
+        {{ equipo.nombre }} - {{ equipo.pais }}
+
+        <a href="{% url 'editar_equipo' equipo.id %}">Editar</a>
+        <a href="{% url 'eliminar_equipo' equipo.id %}">Eliminar</a>
+    </p>
 {% empty %}
     <p>No hay equipos registrados.</p>
 {% endfor %}
+
 {% endblock %}

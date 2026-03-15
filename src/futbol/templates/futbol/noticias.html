@@ -4,11 +4,21 @@
 
 {% block content %}
 <h2>Noticias</h2>
+
+<a href="{% url 'crear_noticia' %}">Crear noticia</a>
+
 {% for noticia in noticias %}
-    <p><strong>{{ noticia.titulo }}</strong> - {{ noticia.fecha }}</p>
+    <p>
+        <strong>{{ noticia.titulo }}</strong> - {{ noticia.fecha }}
+
+        <a href="{% url 'editar_noticia' noticia.id %}">Editar</a>
+        <a href="{% url 'eliminar_noticia' noticia.id %}">Eliminar</a>
+    </p>
+
     <p>{{ noticia.contenido }}</p>
     <hr>
 {% empty %}
     <p>No hay noticias publicadas.</p>
 {% endfor %}
+
 {% endblock %}
